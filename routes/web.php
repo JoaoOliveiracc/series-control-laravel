@@ -18,6 +18,7 @@ Route::get('/', function() {
   return redirect('/series');
 });
 
-Route::resource('/series', SeriesController::class)->only(['index', 'create', 'store', 'destroy']);
-
+Route::resource('/series', SeriesController::class)
+  ->except(['show']);
+  
 Route::delete('/series/destroy/{series}', [SeriesController::class, 'destroy'])->name('series.destroy');
