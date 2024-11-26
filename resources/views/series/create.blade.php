@@ -1,3 +1,43 @@
 <x-layout title="Adicionar Série">
-  <x-series.form :action="route('series.store')" :name="old('name')" :update="false"/>
+  <form action="{{route('series.store')}}" method="POST">
+    @csrf
+    
+
+    <div class="row mb-3">
+      <div class="col-8">
+        <label for="name" class="form-label">Nome:</label>
+        <input
+          value="{{old('name')}}"
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          autofocus
+        >
+      </div>
+
+      <div class="col-2">
+        <label for="seasonsQty" class="form-label">Nº Temporadas:</label>
+        <input
+          id="seasonsQty"
+          name="seasonsQty"
+          class="form-control"
+          value="{{old('seasonsQty')}}"
+          type="text"
+        >
+      </div>
+
+      <div class="col-2">
+        <label for="episodesPerSeason" class="form-label">Eps / Temporada:</label>
+        <input
+          value="{{old('episodesPerSeason')}}"
+          type="text"
+          id="episodesPerSeason"
+          name="episodesPerSeason"
+          class="form-control"
+        >
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Adicionar</button>
+  </form>
 </x-layout>
