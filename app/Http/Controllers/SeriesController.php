@@ -9,7 +9,7 @@ class SeriesController extends Controller
 {
   public function index(Request $request)
   {
-    $series = Serie::query()->orderBy('name')->get();
+    $series = Serie::all();
     $msgSuccess = session('msg.success');
     $request->session()->forget('msg.success');
     
