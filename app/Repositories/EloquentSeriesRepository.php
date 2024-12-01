@@ -27,7 +27,7 @@ class EloquentSeriesRepository implements SeriesRepository
       $episodes = [];
   
       foreach ($series->seasons as $season) {
-        for ($j=1; $i <= $request->episodesPerSeason; $i++) { 
+        for ($j = 1; $j <= $request->episodesPerSeason; $j++) { 
          $episodes[] = [
             'season_id' => $season->id,
             'number' => $j
