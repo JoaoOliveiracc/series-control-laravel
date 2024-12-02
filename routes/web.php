@@ -31,6 +31,7 @@ Route::post('/seasons/{season}/episodes', [EpisodesController::class, 'update'])
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('signin');
+Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
 Route::get('/register', [UsersController::class], 'create')->name('users.create');
 Route::post('/register', [UsersController::class], 'sotre')->name('users.store');
