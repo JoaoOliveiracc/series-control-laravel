@@ -13,7 +13,9 @@
       <div class="container-fluid">
         <a href="{{route('series.index')}}" class="navbar-brand">Home</a>
         @auth
-          <a href="{{route('logout')}}">Sair</a>
+          <form action="{{route('logout')}}" method="post">
+            <button class="btn btn-link">Sair</button>
+          </form>
         @endauth
 
         @guest
